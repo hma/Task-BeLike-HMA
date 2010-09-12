@@ -1,0 +1,189 @@
+#
+#  Task::BeLike::HMA - Makefile.PL
+#
+#  Copyright (c) 2010 Henning Manske. All rights reserved.
+#
+#  This module is free software. You can redistribute it and/or modify it
+#  under the terms of either: the GNU General Public License as published
+#  by the Free Software Foundation; or the Artistic License.
+#
+#  See http://dev.perl.org/licenses/
+#
+#  This module is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+
+use strict;
+use warnings;
+
+# hack: load Module::CPANTS::Analyse before AutoInstall is loaded
+# TODO: bug report
+
+BEGIN { eval { require Module::CPANTS::Analyse } }
+
+use inc::Module::Install 1.00;
+
+
+
+#
+#  preliminary special setup for this Task
+#
+
+# Test::Tester warns on load if not loaded before Test::Builder
+
+eval { require Test::Tester };
+
+# check for recent versions of toolchain modules
+
+unless ($ENV{PERL5_CPAN_IS_RUNNING}) {
+  require CPAN;
+  delete $ENV{PERL5_CPAN_IS_RUNNING};
+  delete $ENV{PERL5_CPANPLUS_IS_RUNNING};
+}
+
+my $cpan = eval { CPAN->VERSION } || 0;
+my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
+
+my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
+my $WANT_MB   = '0.340201'; # 5.10.1 core
+
+my $task = 'Task::BeLike::HMA::Toolchain 0.01';
+my $url  = 'http://github.com/hma/Task-BeLike-HMA-Toolchain';
+
+if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
+  print "*** Toolchain too old.\n"
+    . "    Consider installing $task first.\n"
+    . "    See: $url\n";
+  exit;
+}
+
+# suggest installation of Toolchain task
+
+eval "use $task";
+if ($@) {
+  no warnings 'once';
+  *MY::postamble = sub {
+    print "\n*** Consider installing $task as well.\n"
+      . "    See: $url\n\n";
+    return "all ::\n"
+      . "\t\$(NOECHO) \$(ECHO)\n"
+      . "\t\$(NOECHO) \$(ECHO) \"*** Consider installing $task as well.\"\n"
+      . "\t\$(NOECHO) \$(ECHO) \"    See: $url\"\n"
+      . "\t\$(NOECHO) \$(ECHO)\n";
+  }
+}
+
+# Module::Build has built-in version.pm which fools Module::AutoInstall
+
+delete $INC{'version.pm'};
+
+
+
+#
+#  module metadata
+#
+
+my $NAME = 'Task::BeLike::HMA';
+
+(my $dist = $NAME) =~ s|::|-|g;
+(my $path = $NAME) =~ s|::|/|g;
+
+name       $dist;
+license    'perl';
+all_from   "lib/$path.pm";
+
+bugtracker "http://github.com/hma/$dist/issues";
+repository "http://github.com/hma/$dist";
+
+#
+#  notes
+#
+#  * autodie 2.10 t/caller.t fails if Perl < 5.8.4
+#  * Module::Version requires autodie
+#  * Perl::Critic 1.109 fails with '":color_severity" is not exported by
+#    the Perl::Critic::Utils::Constants module' if Perl < 5.8.4
+#  * Perl::MinimumVersion requires Perl::Critic
+#  * Test::MinimumVersion requirse Perl::MinimumVersion
+#
+
+# Perl 5.10.1 core pragmas
+
+requires 'autodie'           => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
+requires 'parent'            => '0.221';                      # 5.10.1 core
+requires 'version'           => '0.77';                       # 5.10.1 core
+
+# admin
+
+requires 'Module::CoreList'  => '2.38';
+requires 'Module::Version'   => '0.10' if $] >= 5.008_004;
+requires 'App::perlbrew'     => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
+
+# common
+
+requires 'Clone'             => '0.30';
+requires 'Digest::MD5'       => '2.39';  # 5.10.1 core
+requires 'File::Spec'        => '3.29';  # 5.8.9  core
+requires 'List::Util'        => '1.21';  # 5.10.1 core
+requires 'List::MoreUtils'   => '0.21';
+requires 'Module::Pluggable' => '3.9';   # 5.10.1 core
+requires 'Readonly'          => '1.03';
+requires 'Readonly::XS'      => '1.05';
+requires 'Storable'          => '2.19';  # 5.8.9  core
+requires 'Task::Weaken'      => '1.02';
+
+# testing
+
+requires 'Test::More'        => '0.94';  # 5.12.0 core
+requires 'Test::Tester'      => '0.107';
+requires 'Test::NoWarnings'  => '1.02';
+requires 'Test::Deep'        => '0.106';
+requires 'Test::Output'      => '0.16';
+requires 'Test::Exception'   => '0.29';
+requires 'Test::Script'      => '1.07';
+requires 'Test::Warn'        => '0.20';
+
+# personal favourites
+
+requires 'Data::Hexify'      => '1.00';
+requires 'Data::Record';
+requires 'Exception::Class'  => '1.26';
+requires 'File::Next'        => '1.06';
+requires 'JSON'              => '2.22';
+requires 'JSON::XS'          => '2.3';
+requires 'Text::CSV_XS'      => '0.73';
+requires 'Try::Tiny'         => '0.04';
+
+# author / release testing
+
+requires 'Pod::Simple'              => '3.11';
+requires 'Test::Pod'                => '1.42';
+requires 'Pod::Coverage'            => '0.19';
+requires 'Test::Pod::Coverage'      => '1.08';
+requires 'Test::CheckChanges'       => '0.14';
+requires 'Test::CPAN::Meta'         => '0.17';
+requires 'Test::DistManifest'       => '1.009';
+requires 'Test::EOL'                => '0.9'      if $] >= 5.008;
+requires 'Test::HasVersion'         => '0.012';
+requires 'Module::CPANTS::Analyse'  => '0.85';
+requires 'Test::Kwalitee'           => '1.01';
+requires 'Perl::Critic'             => '1.109'    if $] >= 5.008_004;
+requires 'Perl::MinimumVersion'     => '1.25'     if $] >= 5.008_004;
+requires 'Test::MinimumVersion'     => '0.101080' if $] >= 5.008_004;
+requires 'Test::Module::Used'       => '0.1.9'    if $] >= 5.008_003;
+requires 'Test::NoTabs'             => '1.0';
+requires 'Test::Pod::No404s'        => '0.01'     if $] >= 5.008;
+requires 'Test::Portability::Files' => '0.05';
+requires 'Test::Spelling'           => '0.11';
+requires 'Devel::Cover'             => '0.70';
+requires 'Test::Strict'             => '0.14';
+requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
+
+build_requires 'Test::More';
+
+clean_files "$dist-*";
+makemaker_args dist => { COMPRESS => 'gzip -9f' };
+
+auto_install;
+
+WriteAll;

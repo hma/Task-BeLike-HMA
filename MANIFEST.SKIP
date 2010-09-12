@@ -1,0 +1,13 @@
+~$
+\.bak$
+\.old$
+^\.git
+^blib/
+^cover_db/
+^Debian_CPANTS\.txt$
+^Makefile$
+^pm_to_blib$
+^tmp/
+^TODO$
+^xt/
+^Task-BeLike-HMA-
