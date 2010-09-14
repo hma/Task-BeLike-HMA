@@ -1,7 +1,7 @@
 Task::BeLike::HMA
 =================
 
-Task::BeLike::HMA is HMA's personal L<Task> to install the Perl
+Task::BeLike::HMA is HMA's personal Task to install the Perl
 modules he likes to have available.
 
 See "Makefile.PL" for details.
