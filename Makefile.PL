@@ -48,7 +48,7 @@ my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
 my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
 
-my $task = 'Task::BeLike::HMA::Toolchain 0.01';
+my $task = 'Task::BeLike::HMA::Toolchain 0.02_01';
 my $url  = 'http://github.com/hma/Task-BeLike-HMA-Toolchain';
 
 if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
@@ -104,7 +104,7 @@ repository "http://github.com/hma/$dist";
 #  * Perl::Critic 1.109 fails with '":color_severity" is not exported by
 #    the Perl::Critic::Utils::Constants module' if Perl < 5.8.4
 #  * Perl::MinimumVersion requires Perl::Critic
-#  * Test::MinimumVersion requirse Perl::MinimumVersion
+#  * Test::MinimumVersion requires Perl::MinimumVersion
 #
 
 # Perl 5.10.1 core pragmas
@@ -122,14 +122,11 @@ requires 'App::perlbrew'     => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' 
 # common
 
 requires 'Clone'             => '0.30';
-requires 'Digest::MD5'       => '2.39';  # 5.10.1 core
-requires 'File::Spec'        => '3.29';  # 5.8.9  core
 requires 'List::Util'        => '1.21';  # 5.10.1 core
 requires 'List::MoreUtils'   => '0.21';
 requires 'Module::Pluggable' => '3.9';   # 5.10.1 core
 requires 'Readonly'          => '1.03';
 requires 'Readonly::XS'      => '1.05';
-requires 'Storable'          => '2.19';  # 5.8.9  core
 requires 'Task::Weaken'      => '1.02';
 
 # testing
@@ -181,7 +178,7 @@ requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
 
 build_requires 'Test::More';
 
-clean_files "$dist-*";
+clean_files "$dist-* Debian_CPANTS.txt";
 makemaker_args dist => { COMPRESS => 'gzip -9f' };
 
 auto_install;
