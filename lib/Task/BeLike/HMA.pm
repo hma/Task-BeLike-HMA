@@ -5,7 +5,7 @@ use warnings;
 
 use 5.006;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02_01';
 
 $VERSION = eval $VERSION;
 
@@ -19,7 +19,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.01 of Task::BeLike::HMA as of Sep 12, 2010.
+This is version 0.02_01 of Task::BeLike::HMA as of Sep 14, 2010.
 
 =head1 SYNOPSIS
 
@@ -40,9 +40,19 @@ modules he likes to have available.
 
 See C<Makefile.PL> for details.
 
+=head1 DEPENDENCIES
+
+TODO
+
 =head1 SEE ALSO
 
-L<Task|http://search.cpan.org/perldoc?Task>
+=over 4
+
+=item * L<Task|http://search.cpan.org/perldoc?Task>
+
+=item * L<Task::BeLike::HMA::Toolchain|http://github.com/hma/Task-BeLike-HMA-Toolchain>
+
+=back
 
 =head1 AUTHOR
 
