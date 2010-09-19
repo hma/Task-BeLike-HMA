@@ -1,11 +1,12 @@
 Revision history for Task-BeLike-HMA
 
-0.02_01 Sep 14, 2010
+0.02_01 Sep 19, 2010
 
         - Moved dependencies to Task-BeLike-HMA-Toolchain
             * Digest::MD5
             * File::Spec
             * Storable
+            * version.pm
 
 0.01    Sep 12, 2010
 

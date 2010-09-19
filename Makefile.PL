@@ -3,7 +3,7 @@
 #
 #  Copyright (c) 2010 Henning Manske. All rights reserved.
 #
-#  This module is free software. You can redistribute it and/or modify it
+#  This program is free software. You can redistribute it and/or modify it
 #  under the terms of either: the GNU General Public License as published
 #  by the Free Software Foundation; or the Artistic License.
 #
@@ -74,10 +74,6 @@ if ($@) {
   }
 }
 
-# Module::Build has built-in version.pm which fools Module::AutoInstall
-
-delete $INC{'version.pm'};
-
 
 
 #
@@ -111,7 +107,6 @@ repository "http://github.com/hma/$dist";
 
 requires 'autodie'           => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
 requires 'parent'            => '0.221';                      # 5.10.1 core
-requires 'version'           => '0.77';                       # 5.10.1 core
 
 # admin
 
