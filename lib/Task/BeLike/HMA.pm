@@ -3,7 +3,7 @@ package Task::BeLike::HMA;
 use strict;
 use warnings;
 
-use 5.006;
+use 5.006001;
 
 our $VERSION = '0.02_01';
 
@@ -19,7 +19,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.02_01 of Task::BeLike::HMA as of Sep 14, 2010.
+This is version 0.02_01 of Task::BeLike::HMA as of Sep 19, 2010.
 
 =head1 SYNOPSIS
 
