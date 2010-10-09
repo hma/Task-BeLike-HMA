@@ -17,10 +17,16 @@
 use strict;
 use warnings;
 
-# hack: load Module::CPANTS::Analyse before AutoInstall is loaded
-# TODO: bug report
+BEGIN {
+  # hack: load Module::CPANTS::Analyse before AutoInstall is loaded
+  # TODO: bug report
 
-BEGIN { eval { require Module::CPANTS::Analyse } }
+  eval { require Module::CPANTS::Analyse };
+
+  # Test::Tester warns on load if not loaded before Test::Builder
+
+  eval { require Test::Tester };
+}
 
 use inc::Module::Install 1.00;
 
@@ -29,10 +35,6 @@ use inc::Module::Install 1.00;
 #
 #  preliminary special setup for this Task
 #
-
-# Test::Tester warns on load if not loaded before Test::Builder
-
-eval { require Test::Tester };
 
 # check for recent versions of toolchain modules
 
@@ -105,6 +107,12 @@ repository "http://github.com/hma/$dist";
 #    the Perl::Critic::Utils::Constants module' if Perl < 5.8.4
 #  * Perl::MinimumVersion requires Perl::Critic
 #  * Test::MinimumVersion requires Perl::MinimumVersion
+#  * Test::CheckChanges 0.14 causes
+#      1..1
+#      # No tests run!
+#    further on "make"
+#      make: *** [installdeps] Error 255
+#    TODO: bug report
 #
 
 # Perl 5.10.1 core pragmas
@@ -131,7 +139,6 @@ requires 'Try::Tiny'          => '0.04';
 
 # testing
 
-requires 'Test::More'         => '0.94';  # 5.12.0 core
 requires 'Test::Tester'       => '0.107';
 requires 'Test::NoWarnings'   => '1.02';
 requires 'Test::Deep'         => '0.106';
