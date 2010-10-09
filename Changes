@@ -1,6 +1,6 @@
 Revision history for Task-BeLike-HMA
 
-0.02_01 Sep 19, 2010
+0.02_01 Oct 09, 2010
 
         - Moved dependencies to Task-BeLike-HMA-Toolchain
             * Digest::MD5
@@ -8,6 +8,7 @@ Revision history for Task-BeLike-HMA
             * Storable
             * version.pm
         - Changed minimum Perl version to 5.6.1
+        - Force Module::AutoInstall to use CPAN.pm
 
 0.01    Sep 12, 2010
 

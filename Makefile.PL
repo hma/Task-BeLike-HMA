@@ -9,7 +9,7 @@
 #
 #  See http://dev.perl.org/licenses/
 #
-#  This module is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
@@ -73,6 +73,10 @@ if ($@) {
       . "\t\$(NOECHO) \$(ECHO)\n";
   }
 }
+
+# force Module::AutoInstall to use CPAN.pm
+
+$ENV{PERL_AUTOINSTALL_PREFER_CPAN} = 1;
 
 
 
