@@ -109,43 +109,47 @@ repository "http://github.com/hma/$dist";
 
 # Perl 5.10.1 core pragmas
 
-requires 'autodie'           => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
-requires 'parent'            => '0.221';                      # 5.10.1 core
+requires 'autodie'            => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
+requires 'parent'             => '0.221';                      # 5.10.1 core
 
 # common
 
-requires 'Clone'             => '0.30';
-requires 'List::Util'        => '1.21';  # 5.10.1 core
-requires 'List::MoreUtils'   => '0.21';
-requires 'Module::Pluggable' => '3.9';   # 5.10.1 core
-requires 'Readonly'          => '1.03';
-requires 'Readonly::XS'      => '1.05';
-requires 'Task::Weaken'      => '1.02';
+requires 'Clone'              => '0.30';
+requires 'List::Util'         => '1.21';  # 5.10.1 core
+requires 'List::MoreUtils'    => '0.21';
+requires 'Module::Pluggable'  => '3.9';   # 5.10.1 core
+requires 'Readonly'           => '1.03';
+requires 'Readonly::XS'       => '1.05';
+requires 'Task::Weaken'       => '1.02';
 
 # personal favourites
 
-requires 'Exception::Class'  => '1.26';
-requires 'Try::Tiny'         => '0.04';
+requires 'Exception::Class'   => '1.26';
+requires 'Package::Generator' => '0.102';
+requires 'Sub::Exporter'      => '0.981';
+requires 'Try::Tiny'          => '0.04';
 
 # testing
 
-requires 'Test::More'        => '0.94';  # 5.12.0 core
-requires 'Test::Tester'      => '0.107';
-requires 'Test::NoWarnings'  => '1.02';
-requires 'Test::Deep'        => '0.106';
-requires 'Test::Output'      => '0.16';
-requires 'Test::Exception'   => '0.29';
-requires 'Test::Script'      => '1.07';
-requires 'Test::Warn'        => '0.20';
+requires 'Test::More'         => '0.94';  # 5.12.0 core
+requires 'Test::Tester'       => '0.107';
+requires 'Test::NoWarnings'   => '1.02';
+requires 'Test::Deep'         => '0.106';
+requires 'Test::Output'       => '0.16';
+requires 'Test::Exception'    => '0.29';
+requires 'Test::Script'       => '1.07';
+requires 'Test::Warn'         => '0.20';
 
 # personal favourites
 
-requires 'Data::Hexify'      => '1.00';
+requires 'Archive::Zip'       => '1.30';
+requires 'Data::Hexify'       => '1.00';
 requires 'Data::Record';
-requires 'File::Next'        => '1.06';
-requires 'JSON'              => '2.22';
-requires 'JSON::XS'          => '2.3';
-requires 'Text::CSV_XS'      => '0.73';
+requires 'File::Next'         => '1.06';
+requires 'JSON'               => '2.22';
+requires 'JSON::XS'           => '2.3';
+requires 'Parse::RecDescent'  => '1.964';
+requires 'Text::CSV_XS'       => '0.73';
 
 # author / release testing
 
@@ -174,9 +178,9 @@ requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
 
 # admin
 
-requires 'Module::CoreList'  => '2.38';
-requires 'Module::Version'   => '0.10' if $] >= 5.008_004;
-requires 'App::perlbrew'     => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
+requires 'Module::CoreList' => '2.38';
+requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
+requires 'App::perlbrew'    => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
 
 build_requires 'Test::More';
 
