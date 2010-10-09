@@ -9,6 +9,7 @@ Revision history for Task-BeLike-HMA
             * version.pm
         - Changed minimum Perl version to 5.6.1
         - Force Module::AutoInstall to use CPAN.pm
+        - Installation order adjusted
 
 0.01    Sep 12, 2010
 

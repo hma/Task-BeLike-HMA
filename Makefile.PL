@@ -112,12 +112,6 @@ repository "http://github.com/hma/$dist";
 requires 'autodie'           => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
 requires 'parent'            => '0.221';                      # 5.10.1 core
 
-# admin
-
-requires 'Module::CoreList'  => '2.38';
-requires 'Module::Version'   => '0.10' if $] >= 5.008_004;
-requires 'App::perlbrew'     => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
-
 # common
 
 requires 'Clone'             => '0.30';
@@ -127,6 +121,11 @@ requires 'Module::Pluggable' => '3.9';   # 5.10.1 core
 requires 'Readonly'          => '1.03';
 requires 'Readonly::XS'      => '1.05';
 requires 'Task::Weaken'      => '1.02';
+
+# personal favourites
+
+requires 'Exception::Class'  => '1.26';
+requires 'Try::Tiny'         => '0.04';
 
 # testing
 
@@ -143,12 +142,10 @@ requires 'Test::Warn'        => '0.20';
 
 requires 'Data::Hexify'      => '1.00';
 requires 'Data::Record';
-requires 'Exception::Class'  => '1.26';
 requires 'File::Next'        => '1.06';
 requires 'JSON'              => '2.22';
 requires 'JSON::XS'          => '2.3';
 requires 'Text::CSV_XS'      => '0.73';
-requires 'Try::Tiny'         => '0.04';
 
 # author / release testing
 
@@ -174,6 +171,12 @@ requires 'Test::Spelling'           => '0.11';
 requires 'Devel::Cover'             => '0.70';
 requires 'Test::Strict'             => '0.14';
 requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
+
+# admin
+
+requires 'Module::CoreList'  => '2.38';
+requires 'Module::Version'   => '0.10' if $] >= 5.008_004;
+requires 'App::perlbrew'     => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
 
 build_requires 'Test::More';
 
