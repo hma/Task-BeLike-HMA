@@ -5,7 +5,7 @@ use warnings;
 
 use 5.006001;
 
-our $VERSION = '0.02_01';
+our $VERSION = '0.03';
 
 $VERSION = eval $VERSION;
 
@@ -19,7 +19,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.02_01 of Task::BeLike::HMA as of Sep 19, 2010.
+This is version 0.03 of Task::BeLike::HMA as of Oct 10, 2010.
 
 =head1 SYNOPSIS
 

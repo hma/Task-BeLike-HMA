@@ -50,7 +50,7 @@ my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
 my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
 
-my $task = 'Task::BeLike::HMA::Toolchain 0.02_01';
+my $task = 'Task::BeLike::HMA::Toolchain 0.03';
 my $url  = 'http://github.com/hma/Task-BeLike-HMA-Toolchain';
 
 if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
