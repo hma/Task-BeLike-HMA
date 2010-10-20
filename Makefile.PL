@@ -152,12 +152,15 @@ requires 'Test::Warn'         => '0.20';
 # personal favourites
 
 requires 'Archive::Zip'       => '1.30';
+requires 'Carp::Clan'         => '6.02';
+requires 'Config::General'    => '2.49';
 requires 'Data::Hexify'       => '1.00';
 requires 'Data::Record';
 requires 'File::Next'         => '1.06';
 requires 'JSON'               => '2.22';
 requires 'JSON::XS'           => '2.3';
 requires 'Parse::RecDescent'  => '1.964';
+requires 'Path::Class'        => '0.19';
 requires 'Text::CSV_XS'       => '0.73';
 
 # author / release testing
