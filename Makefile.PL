@@ -113,6 +113,8 @@ repository "http://github.com/hma/$dist";
 #    further on "make"
 #      make: *** [installdeps] Error 255
 #    TODO: bug report
+#  * Module::Version 0.12 t/app.t fails if Getopt::Long < 2.36
+#    TODO: bug report
 #
 
 # Perl 5.10.1 core pragmas
@@ -186,6 +188,7 @@ requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
 # admin
 
 requires 'Module::CoreList' => '2.38';
+requires 'Getopt::Long'     => '2.36';  # 5.9.5 core
 requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
 requires 'App::perlbrew'    => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
 
