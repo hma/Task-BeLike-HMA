@@ -147,7 +147,7 @@ requires 'Test::Deep'          => '0.106';
 requires 'Test::Output'        => '0.16';
 requires 'Test::Exception'     => '0.29';
 requires 'Test::Memory::Cycle' => '1.04';
-requires 'Test::Requires'      => '0.06';
+requires 'Test::Requires'      => '0.04';
 requires 'Test::Script'        => '1.07';
 requires 'Test::Warn'          => '0.20';
 
