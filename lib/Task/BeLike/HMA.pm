@@ -19,7 +19,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.04_01 of Task::BeLike::HMA as of Oct 20, 2010.
+This is version 0.04_01 of Task::BeLike::HMA as of Oct 23, 2010.
 
 =head1 SYNOPSIS
 
@@ -42,7 +42,19 @@ See C<Makefile.PL> for details.
 
 =head1 DEPENDENCIES
 
-TODO
+This Task checks if recent versions of Perl toolchain modules are
+available. If not, installation of C<Task::BeLike::HMA::Toolchain> is
+suggested and nothing is installed.
+
+The required minimum versions of toolchain modules are:
+
+=over 4
+
+=item * L<CPAN> 1.9301 (in Perl 5.8.9 core)
+
+=item * L<Module::Build> 0.340201 (in 5.10.1 core)
+
+=back
 
 =head1 SEE ALSO
 
