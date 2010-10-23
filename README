@@ -20,6 +20,20 @@ SYNOPSIS / INSTALLATION
     make install
 
 
+DEPENDENCIES
+
+This Task checks if recent versions of Perl toolchain modules are available.
+If not, installation of Task::BeLike::HMA::Toolchain is suggested and nothing
+is installed.
+
+See http://github.com/hma/Task-BeLike-HMA-Toolchain
+
+The required minimum versions of toolchain modules are:
+
+    CPAN 1.9301 (in Perl 5.8.9 core)
+    Module::Build 0.340201 (in 5.10.1 core)
+
+
 COPYRIGHT AND LICENSE
 
 Copyright (c) 2010 Henning Manske. All rights reserved.
