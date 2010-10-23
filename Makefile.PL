@@ -160,6 +160,7 @@ requires 'Test::Warn'          => '0.20';
 
 # personal favourites
 
+requires 'aliased'             => '0.30';
 requires 'Archive::Zip'        => '1.30';
 requires 'Carp::Clan'          => '6.02';
 requires 'Config::General'     => '2.49';
