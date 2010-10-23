@@ -28,7 +28,14 @@ BEGIN {
   eval { require Test::Tester };
 }
 
-use inc::Module::Install 1.00;
+use inc::Module::Install;
+
+# hack: install Module::Install from a Module::Install based Makefile.PL
+# also, $VERSION of bundled inc/Module/Install.pm must be hacked to a lower
+# version than required from the 'requires' command
+
+use Module::AutoInstall;
+shift @INC;
 
 
 
