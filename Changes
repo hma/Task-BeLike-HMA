@@ -1,11 +1,12 @@
 Revision history for Task-BeLike-HMA
 
-0.04_01 Oct 22, 2010
+0.04_01 Oct 23, 2010
 
         - Module::Version requires Getopt::Long 2.36
         - Added modules
             * Carp::Clan
             * Config::General
+            * Module::Install
             * Path::Class
             * Test::Memory::Cycle
             * Test::Requires

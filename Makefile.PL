@@ -203,6 +203,7 @@ requires 'Module::CoreList' => '2.38';
 requires 'Getopt::Long'     => '2.36';  # 5.9.5 core
 requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
 requires 'App::perlbrew'    => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
+requires 'Module::Install'  => '1.00';
 
 build_requires 'Test::More';
 
