@@ -26,6 +26,10 @@ BEGIN {
   # Test::Tester warns on load if not loaded before Test::Builder
 
   eval { require Test::Tester };
+
+  # force Module::AutoInstall to use CPAN.pm
+
+  $ENV{PERL_AUTOINSTALL_PREFER_CPAN} = 1;
 }
 
 use inc::Module::Install;
@@ -82,10 +86,6 @@ if ($@) {
       . "\t\$(NOECHO) \$(ECHO)\n";
   }
 }
-
-# force Module::AutoInstall to use CPAN.pm
-
-$ENV{PERL_AUTOINSTALL_PREFER_CPAN} = 1;
 
 
 

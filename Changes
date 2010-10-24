@@ -1,5 +1,9 @@
 Revision history for Task-BeLike-HMA
 
+0.06    Oct 24, 2010
+
+        - FIX: Re-enforced usage of CPAN.pm for installation
+
 0.05    Oct 24, 2010
 
         - Module::Version requires Getopt::Long 2.36
