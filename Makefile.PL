@@ -162,8 +162,10 @@ requires 'Test::Warn'          => '0.20';
 
 requires 'aliased'             => '0.30';
 requires 'Archive::Zip'        => '1.30';
+requires 'Carp::Always'        => '0.06';
 requires 'Carp::Clan'          => '6.02';
 requires 'Config::General'     => '2.49';
+requires 'Data::Dump'          => '1.19';
 requires 'Data::Hexify'        => '1.00';
 requires 'Data::Record';
 requires 'File::Next'          => '1.06';

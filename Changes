@@ -1,5 +1,11 @@
 Revision history for Task-BeLike-HMA
 
+0.07_01 Dec 09, 2010
+
+        - Added modules
+            * Carp::Always
+            * Data::Dump
+
 0.06    Oct 24, 2010
 
         - FIX: Re-enforced usage of CPAN.pm for installation
