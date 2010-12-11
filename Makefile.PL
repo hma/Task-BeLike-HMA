@@ -62,7 +62,7 @@ my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
 
 my $task = 'Task::BeLike::HMA::Toolchain 0.03';
-my $url  = 'http://github.com/hma/Task-BeLike-HMA-Toolchain';
+my $url  = 'https://github.com/hma/Task-BeLike-HMA-Toolchain';
 
 if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
   print "*** Toolchain too old.\n"
@@ -102,8 +102,8 @@ name       $dist;
 license    'perl';
 all_from   "lib/$path.pm";
 
-bugtracker "http://github.com/hma/$dist/issues";
-repository "http://github.com/hma/$dist";
+bugtracker "https://github.com/hma/$dist/issues";
+repository "https://github.com/hma/$dist";
 
 #
 #  notes

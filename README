@@ -26,7 +26,7 @@ This Task checks if recent versions of Perl toolchain modules are available.
 If not, installation of Task::BeLike::HMA::Toolchain is suggested and nothing
 is installed.
 
-See http://github.com/hma/Task-BeLike-HMA-Toolchain
+See https://github.com/hma/Task-BeLike-HMA-Toolchain
 
 The required minimum versions of toolchain modules are:
 

@@ -19,7 +19,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.07_01 of Task::BeLike::HMA as of Dec 09, 2010.
+This is version 0.07_01 of Task::BeLike::HMA as of Dec 11, 2010.
 
 =head1 SYNOPSIS
 
@@ -62,7 +62,7 @@ The required minimum versions of toolchain modules are:
 
 =item * L<Task|http://search.cpan.org/perldoc?Task>
 
-=item * L<Task::BeLike::HMA::Toolchain|http://github.com/hma/Task-BeLike-HMA-Toolchain>
+=item * L<Task::BeLike::HMA::Toolchain|https://github.com/hma/Task-BeLike-HMA-Toolchain>
 
 =back
 
