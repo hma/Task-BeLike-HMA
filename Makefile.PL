@@ -132,6 +132,7 @@ requires 'parent'              => '0.221';                      # 5.10.1 core
 # common
 
 requires 'Clone'               => '0.30';
+requires 'Crypt::SSLeay'       => '0.58';
 requires 'List::Util'          => '1.21';  # 5.10.1 core
 requires 'List::MoreUtils'     => '0.21';
 requires 'Module::Pluggable'   => '3.9';   # 5.10.1 core

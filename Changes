@@ -4,6 +4,7 @@ Revision history for Task-BeLike-HMA
 
         - Added modules
             * Carp::Always
+            * Crypt::SSLeay
             * Data::Dump
         - Switch GitHub URLs to https
 
