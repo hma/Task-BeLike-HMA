@@ -1,11 +1,12 @@
 Revision history for Task-BeLike-HMA
 
-0.07_01 Dec 11, 2010
+0.07_01 Dec 15, 2010
 
         - Added modules
             * Carp::Always
             * Crypt::SSLeay
             * Data::Dump
+        - Update Perl::Critic if required
         - Switch GitHub URLs to https
 
 0.06    Oct 24, 2010

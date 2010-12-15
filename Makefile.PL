@@ -189,9 +189,18 @@ requires 'Test::EOL'                => '0.9'      if $] >= 5.008;
 requires 'Test::HasVersion'         => '0.012';
 requires 'Module::CPANTS::Analyse'  => '0.85';
 requires 'Test::Kwalitee'           => '1.01';
-requires 'Perl::Critic'             => '1.109'    if $] >= 5.008_004;
-requires 'Perl::MinimumVersion'     => '1.25'     if $] >= 5.008_004;
-requires 'Test::MinimumVersion'     => '0.101080' if $] >= 5.008_004;
+
+if ($] >= 5.008_004) {
+  my $perl_critic = eval {
+    require List::MoreUtils;
+    eval List::MoreUtils->VERSION <= 0.2703
+  } ? '1.109' : '1.111';
+
+  requires 'Perl::Critic'           => $perl_critic;
+  requires 'Perl::MinimumVersion'   => '1.25';
+  requires 'Test::MinimumVersion'   => '0.101080';
+}
+
 requires 'Test::Module::Used'       => '0.1.9'    if $] >= 5.008_003;
 requires 'Test::NoTabs'             => '1.0';
 requires 'Test::Pod::No404s'        => '0.01'     if $] >= 5.008;
