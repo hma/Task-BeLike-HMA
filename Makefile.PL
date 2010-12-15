@@ -20,15 +20,15 @@ use warnings;
 BEGIN {
   # hack: load Module::CPANTS::Analyse before AutoInstall is loaded
   # TODO: bug report
-
   eval { require Module::CPANTS::Analyse };
 
   # Test::Tester warns on load if not loaded before Test::Builder
-
   eval { require Test::Tester };
 
-  # force Module::AutoInstall to use CPAN.pm
+  # prevent Carp::Always from installing its signal handlers
+  eval { require Carp::Always };
 
+  # force Module::AutoInstall to use CPAN.pm
   $ENV{PERL_AUTOINSTALL_PREFER_CPAN} = 1;
 }
 
