@@ -124,6 +124,8 @@ repository "https://github.com/hma/$dist";
 #    TODO: bug report
 #
 
+requires 'Task::BeLike::HMA::Toolchain' => '0.03';
+
 # Perl 5.10.1 core pragmas
 
 requires 'autodie'             => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
