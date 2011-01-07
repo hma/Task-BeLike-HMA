@@ -1,7 +1,7 @@
 #
 #  Task::BeLike::HMA - Makefile.PL
 #
-#  Copyright (c) 2010 Henning Manske. All rights reserved.
+#  Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 #
 #  This program is free software. You can redistribute it and/or modify it
 #  under the terms of either: the GNU General Public License as published
@@ -219,6 +219,7 @@ requires 'Getopt::Long'     => '2.36';  # 5.9.5 core
 requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
 requires 'App::perlbrew'    => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
 requires 'Module::Install'  => '1.00';
+requires 'App::moduleshere' => '0.07';
 
 build_requires 'Test::More';
 

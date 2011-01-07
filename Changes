@@ -1,8 +1,10 @@
 Revision history for Task-BeLike-HMA
 
-0.08_01 Dec 17, 2010
+0.08_01 Jan 08, 2011
 
         - Add Task::BeLike::HMA::Toolchain to metadata
+        - Added modules
+            * App::moduleshere
 
 0.08    Dec 15, 2010
 

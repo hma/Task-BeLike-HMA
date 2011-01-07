@@ -9,8 +9,6 @@ our $VERSION = '0.08_01';
 
 $VERSION = eval $VERSION;
 
-1;
-
 __END__
 
 =head1 NAME
@@ -19,7 +17,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.08_01 of Task::BeLike::HMA as of Dec 17, 2010.
+This is version 0.08_01 of Task::BeLike::HMA as of Jan 08, 2011.
 
 =head1 SYNOPSIS
 
@@ -72,7 +70,7 @@ Henning Manske <hma@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2010 Henning Manske. All rights reserved.
+Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 
 This module is free software. You can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
