@@ -14,6 +14,8 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
 
+use 5.006001;
+
 use strict;
 use warnings;
 
@@ -122,6 +124,9 @@ repository "https://github.com/hma/$dist";
 #    TODO: bug report
 #  * Module::Version 0.12 t/app.t fails if Getopt::Long < 2.36
 #    TODO: bug report
+#  * Test::Memory::Cycle 1.04 has unneccessary dependency PadWalker
+#    TODO: bug report
+#  * Data::Dump 1.18+ t/quote.t fails on 5.6.2, 5.8.0
 #
 
 requires 'Task::BeLike::HMA::Toolchain' => '0.03';
@@ -139,13 +144,13 @@ requires 'List::Util'          => '1.21';  # 5.10.1 core
 requires 'List::MoreUtils'     => '0.21';
 requires 'Module::Pluggable'   => '3.9';   # 5.10.1 core
 requires 'Readonly'            => '1.03';
-requires 'Readonly::XS'        => '1.05';
+requires 'Readonly::XS'        => '1.05'    if $] >= 5.008;
 requires 'Task::Weaken'        => '1.02';
 
 # personal favourites
 
-requires 'Exception::Class'    => '1.26';
-requires 'Package::Generator'  => '0.102';
+requires 'Exception::Class'    => '1.26'    if $] >= 5.008_001;
+requires 'Package::Generator'  => '0.102'   if $] >= 5.008;
 requires 'Sub::Exporter'       => '0.981';
 requires 'Try::Tiny'           => '0.04';
 
@@ -158,7 +163,7 @@ requires 'Test::Output'        => '0.16';
 requires 'Test::Exception'     => '0.29';
 requires 'Test::Memory::Cycle' => '1.04';
 requires 'Test::Requires'      => '0.04';
-requires 'Test::Script'        => '1.07';
+requires 'Test::Script'        => '1.07'    if $] >= 5.008;
 requires 'Test::Warn'          => '0.20';
 
 # personal favourites
@@ -168,11 +173,11 @@ requires 'Archive::Zip'        => '1.30';
 requires 'Carp::Always'        => '0.06';
 requires 'Carp::Clan'          => '6.02';
 requires 'Config::General'     => '2.49';
-requires 'Data::Dump'          => '1.19';
+requires 'Data::Dump'          => $] >= 5.008_001 ? '1.19' : '1.17';
 requires 'Data::Hexify'        => '1.00';
 requires 'Data::Record';
 requires 'File::Next'          => '1.06';
-requires 'JSON::XS'            => '2.3';
+requires 'JSON::XS'            => '2.3'     if $] >= 5.008_002;
 requires 'JSON'                => '2.22';
 requires 'Parse::RecDescent'   => '1.964';
 requires 'Path::Class'         => '0.19';
@@ -180,8 +185,12 @@ requires 'Text::CSV_XS'        => '0.73';
 
 # author / release testing
 
-requires 'Pod::Simple'              => '3.11';
-requires 'Test::Pod'                => '1.42';
+if ($] >= 5.008_001) {
+  requires 'Pod::Simple'            => '3.11';
+  requires 'Test::Pod'              => '1.42';
+  requires 'Test::Pod::No404s'      => '0.01';
+}
+
 requires 'Pod::Coverage'            => '0.19';
 requires 'Test::Pod::Coverage'      => '1.08';
 requires 'Test::CheckChanges'       => '0.14';
@@ -189,8 +198,11 @@ requires 'Test::CPAN::Meta'         => '0.17';
 requires 'Test::DistManifest'       => '1.009';
 requires 'Test::EOL'                => '0.9'      if $] >= 5.008;
 requires 'Test::HasVersion'         => '0.012';
-requires 'Module::CPANTS::Analyse'  => '0.85';
-requires 'Test::Kwalitee'           => '1.01';
+
+if ($] >= 5.008_002) {
+  requires 'Module::CPANTS::Analyse' => '0.85';
+  requires 'Test::Kwalitee'          => '1.01';
+}
 
 if ($] >= 5.008_004) {
   my $perl_critic = eval {
@@ -205,11 +217,10 @@ if ($] >= 5.008_004) {
 
 requires 'Test::Module::Used'       => '0.1.9'    if $] >= 5.008_003;
 requires 'Test::NoTabs'             => '1.0';
-requires 'Test::Pod::No404s'        => '0.01'     if $] >= 5.008;
 requires 'Test::Portability::Files' => '0.05';
 requires 'Test::Spelling'           => '0.11';
 requires 'Devel::Cover'             => '0.70';
-requires 'Test::Strict'             => '0.14';
+requires 'Test::Strict'             => '0.14'     if $] >= 5.008;
 requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
 
 # admin

@@ -1,10 +1,11 @@
 Revision history for Task-BeLike-HMA
 
-0.08_01 Jan 08, 2011
+0.08_01 Jan 24, 2011
 
         - Add Task::BeLike::HMA::Toolchain to metadata
         - Added modules
             * App::moduleshere
+        - Add more Perl version checks for legacy Perls
 
 0.08    Dec 15, 2010
 
