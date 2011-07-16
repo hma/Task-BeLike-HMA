@@ -1,5 +1,9 @@
 Revision history for Task-BeLike-HMA
 
+0.08_02 Jul 16, 2011
+
+        - Reflect changes in LWP 6 to get SSL support
+
 0.08_01 Jan 24, 2011
 
         - Add Task::BeLike::HMA::Toolchain to metadata

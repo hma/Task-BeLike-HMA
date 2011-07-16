@@ -59,6 +59,7 @@ unless ($ENV{PERL5_CPAN_IS_RUNNING}) {
 
 my $cpan = eval { CPAN->VERSION } || 0;
 my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
+my $lwp  = eval { require LWP; LWP->VERSION } || 0;
 
 my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
@@ -136,10 +137,18 @@ requires 'Task::BeLike::HMA::Toolchain' => '0.03';
 requires 'autodie'             => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
 requires 'parent'              => '0.221';                      # 5.10.1 core
 
+# SSL support for LWP
+
+if ($lwp < 6) {
+  requires 'Crypt::SSLeay'        => '0.58';
+}
+else {
+  requires 'LWP::Protocol::https' => '6.02';
+}
+
 # common
 
 requires 'Clone'               => '0.30';
-requires 'Crypt::SSLeay'       => '0.58';
 requires 'List::Util'          => '1.21';  # 5.10.1 core
 requires 'List::MoreUtils'     => '0.21';
 requires 'Module::Pluggable'   => '3.9';   # 5.10.1 core
