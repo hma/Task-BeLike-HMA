@@ -170,7 +170,7 @@ requires 'Test::NoWarnings'    => '1.02';
 requires 'Test::Deep'          => '0.106';
 requires 'Test::Output'        => '0.16';
 requires 'Test::Exception'     => '0.29';
-requires 'Test::Memory::Cycle' => '1.04';
+requires 'Test::Memory::Cycle' => '1.04'    if $] >= 5.008_002;
 requires 'Test::Requires'      => '0.04';
 requires 'Test::Script'        => '1.07'    if $] >= 5.008;
 requires 'Test::Warn'          => '0.20';
