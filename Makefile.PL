@@ -134,7 +134,7 @@ requires 'Task::BeLike::HMA::Toolchain' => '0.03';
 
 # Perl 5.10.1 core pragmas
 
-requires 'autodie'             => '2.06_01' if $] >= 5.008_004; # 5.10.1 core
+requires 'autodie'             => '2.10'    if $] >= 5.008_004; # 5.13.3 core
 requires 'parent'              => '0.221';                      # 5.10.1 core
 
 # SSL support for LWP
@@ -149,8 +149,8 @@ else {
 # common
 
 requires 'Clone'               => '0.30';
-requires 'List::Util'          => '1.21';  # 5.10.1 core
-requires 'List::MoreUtils'     => '0.21';
+requires 'List::Util'          => '1.23';  # 5.13.1 core
+requires 'List::MoreUtils'     => '0.32';
 requires 'Module::Pluggable'   => '3.9';   # 5.10.1 core
 requires 'Readonly'            => '1.03';
 requires 'Readonly::XS'        => '1.05'    if $] >= 5.008;
@@ -161,19 +161,19 @@ requires 'Task::Weaken'        => '1.02';
 requires 'Exception::Class'    => '1.26'    if $] >= 5.008_001;
 requires 'Package::Generator'  => '0.102'   if $] >= 5.008;
 requires 'Sub::Exporter'       => '0.981';
-requires 'Try::Tiny'           => '0.04';
+requires 'Try::Tiny'           => '0.07';
 
 # testing
 
 requires 'Test::Tester'        => '0.107';
 requires 'Test::NoWarnings'    => '1.02';
-requires 'Test::Deep'          => '0.106';
-requires 'Test::Output'        => '0.16';
-requires 'Test::Exception'     => '0.29';
+requires 'Test::Deep'          => '0.108';
+requires 'Test::Output'        => '1.01';
+requires 'Test::Exception'     => '0.31';
 requires 'Test::Memory::Cycle' => '1.04'    if $] >= 5.008_002;
 requires 'Test::Requires'      => '0.04';
 requires 'Test::Script'        => '1.07'    if $] >= 5.008;
-requires 'Test::Warn'          => '0.20';
+requires 'Test::Warn'          => '0.23';
 
 # personal favourites
 
@@ -181,21 +181,21 @@ requires 'aliased'             => '0.30';
 requires 'Archive::Zip'        => '1.30';
 requires 'Carp::Always'        => '0.06';
 requires 'Carp::Clan'          => '6.02';
-requires 'Config::General'     => '2.49';
+requires 'Config::General'     => '2.50';
 requires 'Data::Dump'          => $] >= 5.008_001 ? '1.19' : '1.17';
 requires 'Data::Hexify'        => '1.00';
 requires 'Data::Record';
 requires 'File::Next'          => '1.06';
 requires 'JSON::XS'            => '2.3'     if $] >= 5.008_002;
-requires 'JSON'                => '2.22';
+requires 'JSON'                => '2.52';
 requires 'Parse::RecDescent'   => '1.964';
-requires 'Path::Class'         => '0.19';
-requires 'Text::CSV_XS'        => '0.73';
+requires 'Path::Class'         => '0.24';
+requires 'Text::CSV_XS'        => '0.81';
 
 # author / release testing
 
 if ($] >= 5.008_001) {
-  requires 'Pod::Simple'            => '3.11';
+  requires 'Pod::Simple'            => '3.16';  # 5.13.11 core
   requires 'Test::Pod'              => '1.42';
   requires 'Test::Pod::No404s'      => '0.01';
 }
@@ -220,25 +220,25 @@ if ($] >= 5.008_004) {
   } ? '1.109' : '1.111';
 
   requires 'Perl::Critic'           => $perl_critic;
-  requires 'Perl::MinimumVersion'   => '1.25';
+  requires 'Perl::MinimumVersion'   => '1.28';
   requires 'Test::MinimumVersion'   => '0.101080';
 }
 
 requires 'Test::Module::Used'       => '0.1.9'    if $] >= 5.008_003;
 requires 'Test::NoTabs'             => '1.0';
 requires 'Test::Portability::Files' => '0.05';
-requires 'Test::Spelling'           => '0.11';
-requires 'Devel::Cover'             => '0.70';
+requires 'Test::Spelling'           => '0.14';
+requires 'Devel::Cover'             => '0.77';
 requires 'Test::Strict'             => '0.14'     if $] >= 5.008;
 requires 'Test::Synopsis'           => '0.05'     if $] >= 5.008_001;
 
 # admin
 
-requires 'Module::CoreList' => '2.38';
+requires 'Module::CoreList' => '2.54';
 requires 'Getopt::Long'     => '2.36';  # 5.9.5 core
 requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
-requires 'App::perlbrew'    => '0.10' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
-requires 'Module::Install'  => '1.00';
+requires 'App::perlbrew'    => '0.27' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
+requires 'Module::Install'  => '1.01';
 requires 'App::moduleshere' => '0.07';
 
 build_requires 'Test::More';

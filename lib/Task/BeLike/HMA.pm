@@ -17,7 +17,7 @@ Task::BeLike::HMA - Install modules HMA uses
 
 =head1 VERSION
 
-This is version 0.08_02 of Task::BeLike::HMA as of Jul 16, 2011.
+This is version 0.08_02 of Task::BeLike::HMA as of Jul 21, 2011.
 
 =head1 SYNOPSIS
 
