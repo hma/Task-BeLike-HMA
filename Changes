@@ -5,6 +5,8 @@ Revision history for Task-BeLike-HMA
         - Reflect changes in LWP 6 to get SSL support
         - Test::Memory::Cycle requires Perl 5.8.2
         - Adjust required versions for many dependencies
+        - Workaround for Module::CPANTS::Analyse requiring
+          Test::YAML::Meta::Version (RT #65903)
 
 0.08_01 Jan 24, 2011
 

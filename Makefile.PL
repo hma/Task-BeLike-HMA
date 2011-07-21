@@ -57,9 +57,11 @@ unless ($ENV{PERL5_CPAN_IS_RUNNING}) {
   delete $ENV{PERL5_CPANPLUS_IS_RUNNING};
 }
 
-my $cpan = eval { CPAN->VERSION } || 0;
-my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
-my $lwp  = eval { require LWP; LWP->VERSION } || 0;
+my $cpan   = eval { CPAN->VERSION } || 0;
+my $mb     = eval { require Module::Build; Module::Build->VERSION } || 0;
+my $lwp    = eval { require LWP; LWP->VERSION } || 0;
+my $sqlite = eval { require CPAN::Config; $CPAN::Config->{use_sqlite} };
+my $tymv   = eval { require Test::YAML::Meta::Version };
 
 my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
@@ -208,7 +210,18 @@ requires 'Test::DistManifest'       => '1.009';
 requires 'Test::EOL'                => '0.9'      if $] >= 5.008;
 requires 'Test::HasVersion'         => '0.012';
 
-if ($] >= 5.008_002) {
+if ($] >= 5.008_002 && ! $sqlite || $tymv) {
+  #
+  # CPAN::SQlite indexes only the latest release of a distribution (RT #63732)
+  # Module::CPANTS::Analyse requires Test::YAML::Meta::Version
+  # which is no longer contained in recent Test-YAML-Meta (RT #65903)
+  # so if CPAN::SQlite is enabled and T::Y::M::Version is not installed
+  # manual installation of T::Y::M::Version is required to enable
+  # installation of Module::CPANTS::Analyse and Test::Kwalitee
+  #
+  # Test::YAML::Meta::Version is contained in
+  # http://search.cpan.org/CPAN/authors/id/B/BA/BARBIE/Test-YAML-Meta-0.16.tar.gz
+  #
   requires 'Module::CPANTS::Analyse' => '0.85';
   requires 'Test::Kwalitee'          => '1.01';
 }
