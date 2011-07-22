@@ -7,7 +7,7 @@ modules he likes to have available.
 See "Makefile.PL" for details.
 
 
-SYNOPSIS / INSTALLATION
+# SYNOPSIS / INSTALLATION
 
     perl Makefile.PL
     make
@@ -20,7 +20,7 @@ SYNOPSIS / INSTALLATION
     make install
 
 
-DEPENDENCIES
+# DEPENDENCIES
 
 This Task checks if recent versions of Perl toolchain modules are available.
 If not, installation of Task::BeLike::HMA::Toolchain is suggested and nothing
@@ -30,11 +30,14 @@ See https://github.com/hma/Task-BeLike-HMA-Toolchain
 
 The required minimum versions of toolchain modules are:
 
-    CPAN 1.9301 (in Perl 5.8.9 core)
-    Module::Build 0.340201 (in 5.10.1 core)
+* [CPAN] [1] 1.9301 (in Perl 5.8.9 core)
+* [Module::Build] [2] 0.340201 (in 5.10.1 core)
+
+  [1]: http://search.cpan.org/dist/CPAN/
+  [2]: http://search.cpan.org/dist/Module-Build/
 
 
-COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 
