@@ -66,7 +66,7 @@ my $tymv   = eval { require Test::YAML::Meta::Version };
 my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
 my $WANT_MB   = '0.340201'; # 5.10.1 core
 
-my $task = 'Task::BeLike::HMA::Toolchain 0.03';
+my $task = 'Task::BeLike::HMA::Toolchain 0.07';
 my $url  = 'https://github.com/hma/Task-BeLike-HMA-Toolchain';
 
 if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
@@ -132,7 +132,7 @@ repository "https://github.com/hma/$dist";
 #  * Data::Dump 1.18+ t/quote.t fails on 5.6.2, 5.8.0
 #
 
-requires 'Task::BeLike::HMA::Toolchain' => '0.03';
+requires 'Task::BeLike::HMA::Toolchain' => '0.07';
 
 # Perl 5.10.1 core pragmas
 
@@ -253,6 +253,13 @@ requires 'Module::Version'  => '0.10' if $] >= 5.008_004;
 requires 'App::perlbrew'    => '0.27' if $] >= 5.008 && index( $^X, 'perlbrew' ) == -1;
 requires 'Module::Install'  => '1.01';
 requires 'App::moduleshere' => '0.07';
+requires 'App::cpanminus'   => '1.4008' if $] >= 5.008;
+
+if ($] >= 5.008_001) {
+  requires 'local::lib'           => '1.008002';
+  requires 'App::cpanlistchanges' => '0.05';
+  requires 'App::cpanoutdated'    => '0.18';
+}
 
 build_requires 'Test::More';
 
