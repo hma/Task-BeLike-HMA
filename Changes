@@ -1,27 +1,23 @@
 Revision history for Task-BeLike-HMA
 
-0.08_02 Jul 23, 2011
+0.09    Jul 23, 2011
 
-        - Reflect changes in LWP 6 to get SSL support
-        - Test::Memory::Cycle requires Perl 5.8.2
-        - Adjust required versions for many dependencies
-        - Workaround for Module::CPANTS::Analyse requiring
-          Test::YAML::Meta::Version (RT #65903)
-        - Convert README to Markdown
         - Added modules
             * App::cpanlistchanges
             * App::cpanminus
             * App::cpanoutdated
+            * App::moduleshere
             * App::pmuninstall
             * local::lib
-        - Upgrade to Module::Install 1.01
-
-0.08_01 Jan 24, 2011
-
-        - Add Task::BeLike::HMA::Toolchain to metadata
-        - Added modules
-            * App::moduleshere
+        - Reflect changes in LWP 6 to get SSL support
+        - Test::Memory::Cycle requires Perl 5.8.2
+        - Workaround for Module::CPANTS::Analyse requiring
+          Test::YAML::Meta::Version (RT #65903)
+        - Adjust required versions for many dependencies
         - Add more Perl version checks for legacy Perls
+        - Add Task::BeLike::HMA::Toolchain to metadata
+        - Convert README to Markdown
+        - Upgrade to Module::Install 1.01
 
 0.08    Dec 15, 2010
 

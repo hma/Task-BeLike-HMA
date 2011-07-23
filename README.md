@@ -1,12 +1,14 @@
 Task::BeLike::HMA
 =================
 
-Task::BeLike::HMA is HMA's personal Task to install the Perl
+Task::BeLike::HMA is HMA's personal [Task] [1] to install the Perl
 modules he likes to have available.
 
 See "Makefile.PL" for details.
 
+  [1]: http://search.cpan.org/perldoc?Task
 
+  
 # SYNOPSIS / INSTALLATION
 
     perl Makefile.PL
@@ -23,18 +25,18 @@ See "Makefile.PL" for details.
 # DEPENDENCIES
 
 This Task checks if recent versions of Perl toolchain modules are available.
-If not, installation of Task::BeLike::HMA::Toolchain is suggested and nothing
-is installed.
+If not, installation of [Task::BeLike::HMA::Toolchain] [2] is suggested and 
+nothing is installed.
 
-See https://github.com/hma/Task-BeLike-HMA-Toolchain
+  [2]: https://github.com/hma/Task-BeLike-HMA-Toolchain
 
 The required minimum versions of toolchain modules are:
 
-* [CPAN] [1] 1.9301 (in Perl 5.8.9 core)
-* [Module::Build] [2] 0.340201 (in 5.10.1 core)
+* [CPAN] [3] 1.9301 (in Perl 5.8.9 core)
+* [Module::Build] [4] 0.340201 (in 5.10.1 core)
 
-  [1]: http://search.cpan.org/dist/CPAN/
-  [2]: http://search.cpan.org/dist/Module-Build/
+  [3]: http://search.cpan.org/dist/CPAN/
+  [4]: http://search.cpan.org/dist/Module-Build/
 
 
 # COPYRIGHT AND LICENSE
