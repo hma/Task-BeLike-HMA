@@ -12,6 +12,7 @@ Revision history for Task-BeLike-HMA
             * App::cpanlistchanges
             * App::cpanminus
             * App::cpanoutdated
+            * App::pmuninstall
             * local::lib
 
 0.08_01 Jan 24, 2011

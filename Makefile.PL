@@ -259,6 +259,7 @@ if ($] >= 5.008_001) {
   requires 'local::lib'           => '1.008002';
   requires 'App::cpanlistchanges' => '0.05';
   requires 'App::cpanoutdated'    => '0.18';
+  requires 'App::pmuninstall'     => '0.18';
 }
 
 build_requires 'Test::More';
