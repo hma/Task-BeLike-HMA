@@ -7,6 +7,7 @@ Revision history for Task-BeLike-HMA
         - Moved dependencies to Task-BeLike-HMA-Toolchain
             * Archive::Zip
             * Module::CoreList
+        - Raise dependency on Module::Build from 0.340201 to 0.3603
 
 0.09    Jul 23, 2011
 

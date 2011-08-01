@@ -33,7 +33,7 @@ nothing is installed.
 The required minimum versions of toolchain modules are:
 
 * [CPAN] [3] 1.9301 (in Perl 5.8.9 core)
-* [Module::Build] [4] 0.340201 (in 5.10.1 core)
+* [Module::Build] [4] 0.3603 (in 5.12.0)
 
   [3]: http://search.cpan.org/dist/CPAN/
   [4]: http://search.cpan.org/dist/Module-Build/

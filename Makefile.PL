@@ -63,13 +63,13 @@ my $lwp    = eval { require LWP; LWP->VERSION } || 0;
 my $sqlite = eval { require CPAN::Config; $CPAN::Config->{use_sqlite} };
 my $tymv   = eval { require Test::YAML::Meta::Version };
 
-my $WANT_CPAN = '1.9301';   # version in Perl 5.8.9 core
-my $WANT_MB   = '0.340201'; # 5.10.1 core
+my $WANT_CPAN = '1.9301'; # version in Perl 5.8.9 core
+my $WANT_MB   = '0.3603'; # 5.12.0
 
-my $task = 'Task::BeLike::HMA::Toolchain 0.07';
+my $task = 'Task::BeLike::HMA::Toolchain 0.07_02';
 my $url  = 'https://github.com/hma/Task-BeLike-HMA-Toolchain';
 
-if ($cpan < $WANT_CPAN || $mb < $WANT_MB) {
+if (eval $cpan < $WANT_CPAN || eval $mb < $WANT_MB) {
   print "*** Toolchain too old.\n"
     . "    Consider installing $task first.\n"
     . "    See: $url\n";
@@ -134,10 +134,10 @@ repository "https://github.com/hma/$dist";
 
 requires 'Task::BeLike::HMA::Toolchain' => '0.07_02';
 
-# Perl 5.10.1 core pragmas
+# Perl 5.10+ core pragmas
 
-requires 'autodie'                      => '2.10'   if $] >= 5.008_004; # 5.13.3 core
-requires 'parent'                       => '0.221'; # 5.10.1 core
+requires 'autodie'                      => '2.10'   if $] >= 5.008_004; # 5.13.3
+requires 'parent'                       => '0.221'; # 5.10.1
 
 # SSL support for LWP
 
@@ -151,9 +151,9 @@ else {
 # common
 
 requires 'Clone'                        => '0.30';
-requires 'List::Util'                   => '1.23';  # 5.13.1 core
+requires 'List::Util'                   => '1.23';  # 5.13.1
 requires 'List::MoreUtils'              => '0.32';
-requires 'Module::Pluggable'            => '3.9';   # 5.10.1 core
+requires 'Module::Pluggable'            => '3.9';   # 5.10.1
 requires 'Readonly'                     => '1.03';
 requires 'Readonly::XS'                 => '1.05'   if $] >= 5.008;
 requires 'Task::Weaken'                 => '1.02';
@@ -196,7 +196,7 @@ requires 'Text::CSV_XS'                 => '0.81';
 # author / release testing
 
 if ($] >= 5.008_001) {
-  requires 'Pod::Simple'                => '3.16';  # 5.13.11 core
+  requires 'Pod::Simple'                => '3.16';  # 5.13.11
   requires 'Test::Pod'                  => '1.42';
   requires 'Test::Pod::No404s'          => '0.01';
 }
@@ -246,7 +246,7 @@ requires 'Test::Synopsis'               => '0.05'   if $] >= 5.008_001;
 
 # admin
 
-requires 'Getopt::Long'                 => '2.36';  # 5.9.5 core
+requires 'Getopt::Long'                 => '2.36';  # 5.9.5
 requires 'Module::Version'              => '0.10'   if $] >= 5.008_004;
 requires 'Module::Install'              => '1.01';
 requires 'App::moduleshere'             => '0.07';
