@@ -1,5 +1,13 @@
 Revision history for Task-BeLike-HMA
 
+0.09_01  Aug 01, 2011
+
+        - Added modules
+            * CPAN::Mini
+        - Moved dependencies to Task-BeLike-HMA-Toolchain
+            * Archive::Zip
+            * Module::CoreList
+
 0.09    Jul 23, 2011
 
         - Added modules

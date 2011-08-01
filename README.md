@@ -8,7 +8,7 @@ See "Makefile.PL" for details.
 
   [1]: http://search.cpan.org/perldoc?Task
 
-  
+
 # SYNOPSIS / INSTALLATION
 
     perl Makefile.PL
@@ -25,7 +25,7 @@ See "Makefile.PL" for details.
 # DEPENDENCIES
 
 This Task checks if recent versions of Perl toolchain modules are available.
-If not, installation of [Task::BeLike::HMA::Toolchain] [2] is suggested and 
+If not, installation of [Task::BeLike::HMA::Toolchain] [2] is suggested and
 nothing is installed.
 
   [2]: https://github.com/hma/Task-BeLike-HMA-Toolchain
